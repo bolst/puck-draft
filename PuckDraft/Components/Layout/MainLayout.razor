@@ -6,7 +6,14 @@
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudMainContent>
+    <MudDrawer Color="Color.Primary" Width="70px" Breakpoint="Breakpoint.Sm" ClipMode="DrawerClipMode.Never" Open Fixed>
+        <CustomNavLink Icon="@Icons.Material.Filled.Home" IconColor="Color.Inherit" Href="/">Home</CustomNavLink>
+    
+        <MudSpacer />
+        
+        <LoginView />
+    </MudDrawer>
+    <MudMainContent Style="padding-top: 0;">
         <div class="pa-4">
             @Body
         </div>

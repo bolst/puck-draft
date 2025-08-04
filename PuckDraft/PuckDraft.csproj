@@ -14,7 +14,18 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Auth0.AspNetCore.Authentication" Version="1.5.0" />
+      <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
       <PackageReference Include="MudBlazor" Version="8.10.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Models\" />
+      <Folder Include="Services\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Components\Pages\Auth\OldLogin.razor" />
     </ItemGroup>
 
 </Project>

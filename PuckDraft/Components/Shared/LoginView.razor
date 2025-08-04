@@ -1,0 +1,27 @@
+@inject AuthenticationStateProvider AuthStateProvider
+
+<AuthorizeView>
+    <Authorized>
+        <MudMenu Class="mb-2" PopoverClass="pa-2" AnchorOrigin="Origin.CenterRight" TransformOrigin="Origin.TopRight" Variant="Variant.Text" LockScroll>
+            <ActivatorContent>
+                <MudFab Label="@context.User.Identity?.Name?.FirstOrDefault().ToString()" Color="Color.Info" />
+            </ActivatorContent>
+            <ChildContent>
+                <MudStack AlignItems="AlignItems.Center" Justify="Justify.SpaceBetween" Row>
+                    <MudFab Class="z-60" Label="@context.User.Identity?.Name?.FirstOrDefault().ToString()" Color="Color.Info" Size="Size.Small" DropShadow="false"/>
+                    <div>
+                        <MudText Typo="Typo.body1">@context.User.Identity?.Name</MudText>
+                    </div>
+                </MudStack>
+                
+                <MudDivider Class="my-2" />
+                
+                <MudNavLink Icon="@Icons.Material.Filled.Logout" IconColor="Color.Inherit" Href="/Account/Logout">Logout</MudNavLink>
+            </ChildContent>
+        </MudMenu>
+    </Authorized>    
+    <NotAuthorized>
+        <CustomNavLink Icon="@Icons.Material.Filled.Login" IconColor="Color.Inherit" Href="/Account/Login">Login</CustomNavLink>
+    </NotAuthorized>
+</AuthorizeView>
+
