@@ -8,20 +8,20 @@
             </ActivatorContent>
             <ChildContent>
                 <MudStack AlignItems="AlignItems.Center" Justify="Justify.SpaceBetween" Row>
-                    <MudFab Class="z-60" Label="@context.User.Identity?.Name?.FirstOrDefault().ToString()" Color="Color.Info" Size="Size.Small" DropShadow="false"/>
-                    <div>
-                        <MudText Typo="Typo.body1">@context.User.Identity?.Name</MudText>
-                    </div>
+                    <MudAvatar Color="Color.Info" Size="Size.Small" Variant="Variant.Text">@context.User.Identity?.Name?.FirstOrDefault().ToString().ToUpper()</MudAvatar>
+                    <MudText Typo="Typo.body1">@context.User.Identity?.Name</MudText>
                 </MudStack>
+
+                <MudDivider Class="my-2"/>
                 
-                <MudDivider Class="my-2" />
-                
-                <MudNavLink Icon="@Icons.Material.Filled.Logout" IconColor="Color.Inherit" Href="/Account/Logout">Logout</MudNavLink>
+                <MudNavLink Href="/settings" Icon="@Icons.Material.Filled.Settings" IconColor="Color.Inherit">Settings</MudNavLink>
+
+                <MudNavLink Href="/Account/Logout" Icon="@Icons.Material.Filled.Logout" IconColor="Color.Inherit">Log out</MudNavLink>
             </ChildContent>
         </MudMenu>
     </Authorized>    
     <NotAuthorized>
-        <CustomNavLink Icon="@Icons.Material.Filled.Login" IconColor="Color.Inherit" Href="/Account/Login">Login</CustomNavLink>
+        <CustomNavLink Href="/Account/Login" Icon="@Icons.Material.Filled.Login" IconColor="Color.Inherit">Login</CustomNavLink>
     </NotAuthorized>
 </AuthorizeView>
 

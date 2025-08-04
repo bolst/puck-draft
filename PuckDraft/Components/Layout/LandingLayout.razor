@@ -1,0 +1,37 @@
+﻿@inherits LayoutComponentBase
+
+@inject NavigationManager Navigation
+
+<MudThemeProvider />
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    <MudAppBar Class="white" Elevation="1">
+
+        <MudImage Class="pr-4 cursor-pointer" @onclick="@(_ => Navigation.NavigateTo("/"))" Src="https://iiedqecnfyojvubvugmy.supabase.co/storage/v1/object/public/logos//bc-new.png" Width="70"/>
+        <div class="d-none d-md-block">
+            @* <MudButton Color="Color.Inherit" Href="/schedule" Variant="Variant.Text" Size="Size.Large">SCHEDULE</MudButton> *@
+        </div>
+        
+        <MudSpacer />
+
+        <div class="d-none d-md-block">
+            <MudButton Color="Color.Primary" Href="/Account/Login" Variant="Variant.Text" Size="Size.Large">Log in</MudButton>
+            <MudButton Color="Color.Primary" Href="/Account/Signup" Variant="Variant.Filled" Size="Size.Large">Sign up</MudButton>
+        </div>
+        
+    </MudAppBar>
+    <MudMainContent>
+        <div class="pa-4">
+            @Body
+        </div>
+    </MudMainContent>
+</MudLayout>
+
+<div id="blazor-error-ui" data-nosnippet>
+    An unhandled error has occurred.
+    <a href="." class="reload">Reload</a>
+    <span class="dismiss">🗙</span>
+</div>

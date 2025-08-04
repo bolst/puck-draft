@@ -26,6 +26,7 @@
 
     <ItemGroup>
       <_ContentIncludedByDefault Remove="Components\Pages\Auth\OldLogin.razor" />
+      <_ContentIncludedByDefault Remove="Components\Pages\App\Layout\MainLayout.razor" />
     </ItemGroup>
 
 </Project>
